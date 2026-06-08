@@ -407,7 +407,7 @@ code runs everywhere.
 
 Issues, ideas and PRs are very welcome — this is built for the community. If it
 saves you a headache on the road, a ⭐ on
-[GitHub](https://github.com/Arbaan-KaizenQue/motion_stabilizer_core) means a lot.
+[GitHub](https://github.com/arbaan-max/motion_stabilizer_core) means a lot.
 
 ---
 
