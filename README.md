@@ -337,7 +337,7 @@ A full demo with live toggles, dropdowns and sliders for **every** option is in
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/Arbaan-KaizenQue/motion_stabilizer_core.git
+git clone https://github.com/arbaan-max/Motion-Sickness
 cd motion_stabilizer_core
 ```
 
