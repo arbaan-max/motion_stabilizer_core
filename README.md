@@ -12,7 +12,7 @@ inner ear already feels.
 
 > Built because there was **no motion-sickness package on pub.dev**. Free, open
 > source, and made for the community.
-> ⭐ **GitHub:** https://github.com/Arbaan-KaizenQue/motion_stabilizer_core
+> ⭐ **GitHub:** https://github.com/arbaan-max/motion_stabilizer_core
 
 It ships **two layers** that share one configuration object:
 
