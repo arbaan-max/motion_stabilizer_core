@@ -1,0 +1,31 @@
+name: motion_stabilizer_core
+description: >-
+  Motion-sickness mitigation toolkit for Flutter. Sensor-driven "vehicle motion
+  cues" (animated dots), an artificial horizon and a fixation dot, plus an
+  Android system overlay that floats the cues over any app.
+version: 0.3.0
+homepage: https://github.com/Arbaan-KaizenQue/motion_stabilizer_core
+repository: https://github.com/Arbaan-KaizenQue/motion_stabilizer_core
+issue_tracker: https://github.com/Arbaan-KaizenQue/motion_stabilizer_core/issues
+
+environment:
+  sdk: ^3.11.5
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sensors_plus: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+# This package is a plugin: it ships Dart code AND native Android code.
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.kaizenque.motion_stabilizer_core
+        pluginClass: MotionStabilizerCorePlugin
