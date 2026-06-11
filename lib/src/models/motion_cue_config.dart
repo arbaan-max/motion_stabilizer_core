@@ -16,12 +16,7 @@ enum CuePlacement {
 }
 
 /// The shape drawn for each bubble.
-enum DotShape {
-  circle,
-  ring,
-  square,
-  diamond,
-}
+enum DotShape { circle, ring, square, diamond }
 
 /// The visual style of the Earth-stable reference line ("horizon" / divider).
 ///
@@ -106,14 +101,14 @@ class MotionCueConfig {
     this.focusDotRadius = 6.0,
     this.focusDotHaloRadius = 18.0,
     this.focusDotHaloColor = const Color(0x33FFFFFF),
-  })  : assert(dotRadius > 0),
-        assert(dotSpacing > 0),
-        assert(gain >= 0),
-        assert(maxTravel >= 0),
-        assert(dotSizeJitter >= 0 && dotSizeJitter <= 1),
-        assert(horizonStabilization >= 0 && horizonStabilization < 1),
-        assert(dotBaseOpacity >= 0 && dotBaseOpacity <= 1),
-        assert(dotMaxOpacity >= 0 && dotMaxOpacity <= 1);
+  }) : assert(dotRadius > 0),
+       assert(dotSpacing > 0),
+       assert(gain >= 0),
+       assert(maxTravel >= 0),
+       assert(dotSizeJitter >= 0 && dotSizeJitter <= 1),
+       assert(horizonStabilization >= 0 && horizonStabilization < 1),
+       assert(dotBaseOpacity >= 0 && dotBaseOpacity <= 1),
+       assert(dotMaxOpacity >= 0 && dotMaxOpacity <= 1);
 
   // ---------------------------------------------------------------------------
   // Bubbles (dots)
@@ -255,18 +250,18 @@ class MotionCueConfig {
   /// Subtle cues for sensitive users: small, low-contrast edge dots and a faint
   /// level line. Minimal cognitive load.
   const MotionCueConfig.gentle()
-      : this(
-          dotRadius: 4.0,
-          dotSpacing: 64.0,
-          placement: CuePlacement.edges,
-          dotBaseOpacity: 0.22,
-          dotMaxOpacity: 0.6,
-          gain: 12.0,
-          maxTravel: 20.0,
-          dividerStyle: DividerStyle.line,
-          dividerOpacity: 0.35,
-          horizonStabilization: 0.92,
-        );
+    : this(
+        dotRadius: 4.0,
+        dotSpacing: 64.0,
+        placement: CuePlacement.edges,
+        dotBaseOpacity: 0.22,
+        dotMaxOpacity: 0.6,
+        gain: 12.0,
+        maxTravel: 20.0,
+        dividerStyle: DividerStyle.line,
+        dividerOpacity: 0.35,
+        horizonStabilization: 0.92,
+      );
 
   /// Balanced defaults suitable for most riders.
   const MotionCueConfig.standard() : this();
@@ -274,26 +269,26 @@ class MotionCueConfig {
   /// Strong, highly-visible cues for severe motion sickness: full-screen dots
   /// and a flowing filled horizon.
   const MotionCueConfig.intense()
-      : this(
-          placement: CuePlacement.fullScreen,
-          dotSpacing: 48.0,
-          dotBaseOpacity: 0.45,
-          dotMaxOpacity: 1.0,
-          dotGlow: true,
-          gain: 22.0,
-          maxTravel: 36.0,
-          dividerStyle: DividerStyle.filledHorizon,
-          dividerOpacity: 0.7,
-        );
+    : this(
+        placement: CuePlacement.fullScreen,
+        dotSpacing: 48.0,
+        dotBaseOpacity: 0.45,
+        dotMaxOpacity: 1.0,
+        dotGlow: true,
+        gain: 22.0,
+        maxTravel: 36.0,
+        dividerStyle: DividerStyle.filledHorizon,
+        dividerOpacity: 0.7,
+      );
 
   /// No dots — just the calming "light-blue horizon" fill that flows and tilts
   /// with the device. Good as an ambient, low-distraction background.
   const MotionCueConfig.calmHorizon()
-      : this(
-          showDots: false,
-          dividerStyle: DividerStyle.filledHorizon,
-          dividerOpacity: 0.85,
-        );
+    : this(
+        showDots: false,
+        dividerStyle: DividerStyle.filledHorizon,
+        dividerOpacity: 0.85,
+      );
 
   MotionCueConfig copyWith({
     bool? showDots,
@@ -375,42 +370,42 @@ class MotionCueConfig {
   /// Serialises the config for the native method channel. Colours are sent as
   /// 32-bit ARGB ints; enums as their index.
   Map<String, dynamic> toMap() => <String, dynamic>{
-        'showDots': showDots,
-        'dotColor': _argb(dotColor),
-        'dotRadius': dotRadius,
-        'dotSpacing': dotSpacing,
-        'placement': placement.index,
-        'dotShape': dotShape.index,
-        'dotBaseOpacity': dotBaseOpacity,
-        'dotMaxOpacity': dotMaxOpacity,
-        'dotReactToMotionOpacity': dotReactToMotionOpacity,
-        'dotSizeJitter': dotSizeJitter,
-        'dotGlow': dotGlow,
-        'gain': gain,
-        'maxTravel': maxTravel,
-        'activationThreshold': activationThreshold,
-        'maxIntensity': maxIntensity,
-        'invertX': invertX,
-        'invertY': invertY,
-        'swapAxes': swapAxes,
-        'dividerStyle': dividerStyle.index,
-        'dividerColor': _argb(dividerColor),
-        'dividerThickness': dividerThickness,
-        'dividerOpacity': dividerOpacity,
-        'horizonFillColor': _argb(horizonFillColor),
-        'waveAmplitude': waveAmplitude,
-        'waveWavelength': waveWavelength,
-        'waveSpeed': waveSpeed,
-        'waveAnimated': waveAnimated,
-        'waveReactsToMotion': waveReactsToMotion,
-        'levelWithHorizon': levelWithHorizon,
-        'horizonStabilization': horizonStabilization,
-        'showFocusDot': showFocusDot,
-        'focusDotColor': _argb(focusDotColor),
-        'focusDotRadius': focusDotRadius,
-        'focusDotHaloRadius': focusDotHaloRadius,
-        'focusDotHaloColor': _argb(focusDotHaloColor),
-      };
+    'showDots': showDots,
+    'dotColor': _argb(dotColor),
+    'dotRadius': dotRadius,
+    'dotSpacing': dotSpacing,
+    'placement': placement.index,
+    'dotShape': dotShape.index,
+    'dotBaseOpacity': dotBaseOpacity,
+    'dotMaxOpacity': dotMaxOpacity,
+    'dotReactToMotionOpacity': dotReactToMotionOpacity,
+    'dotSizeJitter': dotSizeJitter,
+    'dotGlow': dotGlow,
+    'gain': gain,
+    'maxTravel': maxTravel,
+    'activationThreshold': activationThreshold,
+    'maxIntensity': maxIntensity,
+    'invertX': invertX,
+    'invertY': invertY,
+    'swapAxes': swapAxes,
+    'dividerStyle': dividerStyle.index,
+    'dividerColor': _argb(dividerColor),
+    'dividerThickness': dividerThickness,
+    'dividerOpacity': dividerOpacity,
+    'horizonFillColor': _argb(horizonFillColor),
+    'waveAmplitude': waveAmplitude,
+    'waveWavelength': waveWavelength,
+    'waveSpeed': waveSpeed,
+    'waveAnimated': waveAnimated,
+    'waveReactsToMotion': waveReactsToMotion,
+    'levelWithHorizon': levelWithHorizon,
+    'horizonStabilization': horizonStabilization,
+    'showFocusDot': showFocusDot,
+    'focusDotColor': _argb(focusDotColor),
+    'focusDotRadius': focusDotRadius,
+    'focusDotHaloRadius': focusDotHaloRadius,
+    'focusDotHaloColor': _argb(focusDotHaloColor),
+  };
 
   static MotionCueConfig fromMap(Map<String, dynamic> map) {
     double d(String k, double def) => (map[k] as num?)?.toDouble() ?? def;

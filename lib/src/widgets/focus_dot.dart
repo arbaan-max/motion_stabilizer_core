@@ -71,11 +71,7 @@ class _FocusDotPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final center = size.center(Offset.zero);
     if (haloRadius > radius) {
-      canvas.drawCircle(
-        center,
-        haloRadius,
-        Paint()..color = haloColor,
-      );
+      canvas.drawCircle(center, haloRadius, Paint()..color = haloColor);
     }
     canvas.drawCircle(center, radius, Paint()..color = color);
   }

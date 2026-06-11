@@ -47,12 +47,9 @@ class SensorService {
       ..reset()
       ..start();
 
-    _accelSub =
-        accelerometerEventStream(samplingPeriod: samplingPeriod).listen(
-      _onAccelerometer,
-      onError: _onSensorError,
-      cancelOnError: false,
-    );
+    _accelSub = accelerometerEventStream(
+      samplingPeriod: samplingPeriod,
+    ).listen(_onAccelerometer, onError: _onSensorError, cancelOnError: false);
 
     _gyroSub = gyroscopeEventStream(samplingPeriod: samplingPeriod).listen(
       (event) => _latestRotation = Vector3(event.x, event.y, event.z),

@@ -40,8 +40,8 @@ class DotsPainter extends CustomPainter {
 
     final glowPaint = config.dotGlow
         ? (Paint()
-          ..color = config.dotColor.withValues(alpha: opacity * 0.45)
-          ..maskFilter = MaskFilter.blur(BlurStyle.normal, config.dotRadius))
+            ..color = config.dotColor.withValues(alpha: opacity * 0.45)
+            ..maskFilter = MaskFilter.blur(BlurStyle.normal, config.dotRadius))
         : null;
 
     final spacing = config.dotSpacing;
@@ -108,8 +108,7 @@ class DotsPainter extends CustomPainter {
         final hBand = size.width * 0.22;
         final vBand = size.height * 0.16;
         final nearSide = base.dx < hBand || base.dx > size.width - hBand;
-        final nearTopBottom =
-            base.dy < vBand || base.dy > size.height - vBand;
+        final nearTopBottom = base.dy < vBand || base.dy > size.height - vBand;
         return nearSide || nearTopBottom;
       case CuePlacement.center:
         final dx = (base.dx - size.width / 2).abs();
@@ -120,7 +119,5 @@ class DotsPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant DotsPainter old) =>
-      old.offset != offset ||
-      old.opacity != opacity ||
-      old.config != config;
+      old.offset != offset || old.opacity != opacity || old.config != config;
 }

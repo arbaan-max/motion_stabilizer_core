@@ -37,9 +37,10 @@ class MotionData {
   final Duration timestamp;
 
   /// Magnitude of the horizontal (screen-plane) acceleration in m/s^2.
-  double get horizontalIntensity =>
-      math.sqrt(linearAcceleration.x * linearAcceleration.x +
-          linearAcceleration.y * linearAcceleration.y);
+  double get horizontalIntensity => math.sqrt(
+    linearAcceleration.x * linearAcceleration.x +
+        linearAcceleration.y * linearAcceleration.y,
+  );
 
   /// Device roll in radians, derived from gravity (left/right tilt).
   ///
@@ -48,9 +49,9 @@ class MotionData {
 
   /// Device pitch in radians, derived from gravity (front/back tilt).
   double get pitch => math.atan2(
-        gravity.y,
-        math.sqrt(gravity.x * gravity.x + gravity.z * gravity.z),
-      );
+    gravity.y,
+    math.sqrt(gravity.x * gravity.x + gravity.z * gravity.z),
+  );
 
   MotionData copyWith({
     Vector3? gravity,

@@ -11,10 +11,7 @@ import '../painters/divider_painter.dart';
 /// horizon. It animates continuously via its own ticker, so wavy/filled styles
 /// keep moving even when the device is still.
 class MotionDivider extends StatefulWidget {
-  const MotionDivider({
-    super.key,
-    required this.controller,
-  });
+  const MotionDivider({super.key, required this.controller});
 
   final MotionController controller;
 

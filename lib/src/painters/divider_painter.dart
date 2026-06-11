@@ -63,8 +63,9 @@ class MotionDividerPainter extends CustomPainter {
     canvas.restore();
   }
 
-  Color get _lineColor => config.dividerColor
-      .withValues(alpha: config.dividerColor.a * config.dividerOpacity);
+  Color get _lineColor => config.dividerColor.withValues(
+    alpha: config.dividerColor.a * config.dividerOpacity,
+  );
 
   Paint get _stroke => Paint()
     ..color = _lineColor
@@ -107,12 +108,15 @@ class MotionDividerPainter extends CustomPainter {
     final bob = reacts ? flow.dy * 0.35 : 0.0;
     final a = reacts ? amp * (1 + intensity * 1.5) : amp;
     final primary = math.sin((x / wl) * 2 * math.pi + p + sway) * a;
-    final ripple = math.sin((x / (wl * 0.5)) * 2 * math.pi - p * 1.7) * a * 0.45;
+    final ripple =
+        math.sin((x / (wl * 0.5)) * 2 * math.pi - p * 1.7) * a * 0.45;
     return primary + ripple + bob;
   }
 
   void _drawWavy(Canvas canvas, double half, {required bool fill}) {
-    final amp = fill ? math.min(config.waveAmplitude, 9.0) : config.waveAmplitude;
+    final amp = fill
+        ? math.min(config.waveAmplitude, 9.0)
+        : config.waveAmplitude;
     final wl = config.waveWavelength <= 0 ? 140.0 : config.waveWavelength;
     final path = Path();
     const step = 5.0;
@@ -136,7 +140,8 @@ class MotionDividerPainter extends CustomPainter {
         fillPath,
         Paint()
           ..color = config.horizonFillColor.withValues(
-              alpha: config.horizonFillColor.a * config.dividerOpacity)
+            alpha: config.horizonFillColor.a * config.dividerOpacity,
+          )
           ..style = PaintingStyle.fill,
       );
     }
@@ -171,8 +176,9 @@ class MotionDividerPainter extends CustomPainter {
   void _drawGradientBand(Canvas canvas, double half) {
     final bandHalf = math.max(config.waveAmplitude * 4, 48.0);
     final rect = Rect.fromLTRB(-half, -bandHalf, half, bandHalf);
-    final base = config.dividerColor
-        .withValues(alpha: config.dividerColor.a * config.dividerOpacity);
+    final base = config.dividerColor.withValues(
+      alpha: config.dividerColor.a * config.dividerOpacity,
+    );
     final shader = LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,

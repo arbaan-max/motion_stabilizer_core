@@ -7,11 +7,9 @@ import 'math_utils.dart';
 /// sampling rate) and subtract it to recover the user's real motion, then run
 /// that through a second exponential smoother to remove high-frequency jitter.
 class MotionFilter {
-  MotionFilter({
-    this.gravityFactor = 0.92,
-    this.smoothingFactor = 0.78,
-  })  : assert(gravityFactor >= 0 && gravityFactor < 1),
-        assert(smoothingFactor >= 0 && smoothingFactor < 1);
+  MotionFilter({this.gravityFactor = 0.92, this.smoothingFactor = 0.78})
+    : assert(gravityFactor >= 0 && gravityFactor < 1),
+      assert(smoothingFactor >= 0 && smoothingFactor < 1);
 
   /// How strongly the gravity estimate resists change. Closer to 1 = slower,
   /// steadier gravity tracking.
@@ -61,8 +59,8 @@ class MotionFilter {
 /// A scalar exponential smoother, handy for fading intensity values.
 class ScalarSmoother {
   ScalarSmoother({this.factor = 0.85, double initial = 0})
-      : assert(factor >= 0 && factor < 1),
-        _value = initial;
+    : assert(factor >= 0 && factor < 1),
+      _value = initial;
 
   final double factor;
   double _value;

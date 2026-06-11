@@ -7,10 +7,7 @@ import 'dart:math' as math;
 class Vector3 {
   const Vector3(this.x, this.y, this.z);
 
-  const Vector3.zero()
-      : x = 0,
-        y = 0,
-        z = 0;
+  const Vector3.zero() : x = 0, y = 0, z = 0;
 
   final double x;
   final double y;
@@ -33,10 +30,10 @@ class Vector3 {
 
   /// Linear interpolation between [this] and [other] by [t] in `[0, 1]`.
   Vector3 lerp(Vector3 other, double t) => Vector3(
-        x + (other.x - x) * t,
-        y + (other.y - y) * t,
-        z + (other.z - z) * t,
-      );
+    x + (other.x - x) * t,
+    y + (other.y - y) * t,
+    z + (other.z - z) * t,
+  );
 
   @override
   String toString() =>

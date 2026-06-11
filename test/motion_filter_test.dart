@@ -76,8 +76,10 @@ void main() {
 
     test('presets carry their intent', () {
       expect(const MotionCueConfig.calmHorizon().showDots, isFalse);
-      expect(const MotionCueConfig.intense().placement,
-          CuePlacement.fullScreen);
+      expect(
+        const MotionCueConfig.intense().placement,
+        CuePlacement.fullScreen,
+      );
       expect(const MotionCueConfig.gentle().dividerStyle, DividerStyle.line);
     });
   });

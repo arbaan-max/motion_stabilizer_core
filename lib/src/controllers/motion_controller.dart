@@ -19,9 +19,9 @@ class MotionController extends ChangeNotifier {
   MotionController({
     MotionCueConfig config = const MotionCueConfig(),
     SensorService? sensorService,
-  })  : _config = config,
-        _sensorService = sensorService ?? SensorService(),
-        _ownsSensorService = sensorService == null;
+  }) : _config = config,
+       _sensorService = sensorService ?? SensorService(),
+       _ownsSensorService = sensorService == null;
 
   final SensorService _sensorService;
   final bool _ownsSensorService;
@@ -83,7 +83,9 @@ class MotionController extends ChangeNotifier {
     _angleSeeded = false;
     _sub = _sensorService.stream.listen(
       _onSample,
-      onError: (_) {/* keep cues at rest on sensor error */},
+      onError: (_) {
+        /* keep cues at rest on sensor error */
+      },
     );
     _sensorService.start();
   }

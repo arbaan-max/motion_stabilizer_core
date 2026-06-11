@@ -13,11 +13,7 @@ import 'motion_divider.dart';
 /// Place it above your content inside a `Stack`, or use [MotionStabilizer] to
 /// wrap an entire subtree without managing the stack yourself.
 class MotionOverlay extends StatelessWidget {
-  const MotionOverlay({
-    super.key,
-    required this.controller,
-    this.showFocusDot,
-  });
+  const MotionOverlay({super.key, required this.controller, this.showFocusDot});
 
   final MotionController controller;
 
@@ -126,7 +122,8 @@ class _MotionStabilizerState extends State<MotionStabilizer> {
     super.didUpdateWidget(old);
     if (widget.controller != old.controller) {
       if (_ownsController) _controller.dispose();
-      _controller = widget.controller ?? MotionController(config: widget.config);
+      _controller =
+          widget.controller ?? MotionController(config: widget.config);
       _ownsController = widget.controller == null;
     }
     if (widget.config != _controller.config) {

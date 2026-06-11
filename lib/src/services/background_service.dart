@@ -13,10 +13,11 @@ import '../models/motion_cue_config.dart';
 /// other than Android so callers do not need platform checks everywhere.
 class BackgroundOverlayService {
   BackgroundOverlayService({@visibleForTesting MethodChannel? channel})
-      : _channel = channel ?? _defaultChannel;
+    : _channel = channel ?? _defaultChannel;
 
-  static const MethodChannel _defaultChannel =
-      MethodChannel('motion_stabilizer_core/overlay');
+  static const MethodChannel _defaultChannel = MethodChannel(
+    'motion_stabilizer_core/overlay',
+  );
 
   final MethodChannel _channel;
 
@@ -45,8 +46,10 @@ class BackgroundOverlayService {
   Future<bool> start(MotionCueConfig config) async {
     if (!isSupported) return false;
     if (!await hasOverlayPermission()) return false;
-    final started =
-        await _channel.invokeMethod<bool>('startOverlay', config.toMap());
+    final started = await _channel.invokeMethod<bool>(
+      'startOverlay',
+      config.toMap(),
+    );
     return started ?? false;
   }
 
