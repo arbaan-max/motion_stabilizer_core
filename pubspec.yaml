@@ -4,9 +4,9 @@ description: >-
   cues" (animated dots), an artificial horizon and a fixation dot, plus an
   Android system overlay that floats the cues over any app.
 version: 0.3.0
-homepage: https://github.com/Arbaan-KaizenQue/motion_stabilizer_core
-repository: https://github.com/Arbaan-KaizenQue/motion_stabilizer_core
-issue_tracker: https://github.com/Arbaan-KaizenQue/motion_stabilizer_core/issues
+homepage: https://github.com/arbaan-max/motion_stabilizer_core
+repository: https://github.com/arbaan-max/motion_stabilizer_core
+issue_tracker: https://github.com/arbaan-max/motion_stabilizer_core/issues
 
 environment:
   sdk: ^3.11.5

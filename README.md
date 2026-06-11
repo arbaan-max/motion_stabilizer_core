@@ -1,5 +1,8 @@
 # motion_stabilizer_core
 
+[![pub package](https://img.shields.io/pub/v/motion_stabilizer_core.svg)](https://pub.dev/packages/motion_stabilizer_core)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 **Motion-sickness mitigation toolkit for Flutter, focused on Android.**
 
 When you read or watch something on a phone in a moving vehicle, your eyes see a
@@ -96,6 +99,9 @@ android {
 
 > The in-app layer (bubbles/horizon over **your own** UI) needs **no permissions
 > at all** — only the system overlay does.
+
+**iOS:** no setup required — the in-app layer works out of the box. The system
+overlay is Android-only (iOS does not allow drawing over other apps).
 
 ---
 
@@ -337,7 +343,7 @@ A full demo with live toggles, dropdowns and sliders for **every** option is in
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/arbaan-max/Motion-Sickness
+git clone https://github.com/arbaan-max/motion_stabilizer_core.git
 cd motion_stabilizer_core
 ```
 
@@ -403,11 +409,29 @@ code runs everywhere.
 
 ---
 
+## 🔋 Battery & privacy
+
+- All sensor processing happens **on-device** — nothing is collected, stored or
+  sent anywhere. The package has no network access at all.
+- The in-app layer only listens to sensors while `enabled: true` and releases
+  them when disabled or disposed. The system overlay runs a lightweight
+  foreground service; battery impact is comparable to a fitness app reading the
+  accelerometer.
+
+---
+
 ## 🤝 Contributing
 
-Issues, ideas and PRs are very welcome — this is built for the community. If it
-saves you a headache on the road, a ⭐ on
+Issues, ideas and PRs are very welcome — this is built for the community. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for how to get started. If it saves you a
+headache on the road, a ⭐ on
 [GitHub](https://github.com/arbaan-max/motion_stabilizer_core) means a lot.
+
+---
+
+## 📄 License
+
+Licensed under the [MIT License](LICENSE).
 
 ---
 
