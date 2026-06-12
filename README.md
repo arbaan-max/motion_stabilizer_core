@@ -28,10 +28,7 @@ It ships **two layers** that share one configuration object:
 
 ## 🎬 Demo
 
-<!-- TODO: replace with the demo video/GIF. Upload it to the repo (e.g. doc/demo.gif)
-     and use the full raw URL so pub.dev can render it:
-     ![demo](https://raw.githubusercontent.com/arbaan-max/motion_sickness_stabilizer/main/doc/demo.gif) -->
-*Demo video coming soon — see the [example app](example/) to try it on your device.*
+https://github.com/user-attachments/assets/59c72255-c148-4fa0-89d7-7708c4efe41e
 
 ---
 
