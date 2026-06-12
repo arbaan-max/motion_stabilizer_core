@@ -1,11 +1,11 @@
 {
   "roots": [
-    "motion_stabilizer_core"
+    "motion_sickness_stabilizer"
   ],
   "packages": [
     {
-      "name": "motion_stabilizer_core",
-      "version": "0.3.0",
+      "name": "motion_sickness_stabilizer",
+      "version": "0.4.0",
       "dependencies": [
         "flutter",
         "sensors_plus"

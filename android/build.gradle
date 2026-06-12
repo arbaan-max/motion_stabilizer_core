@@ -1,4 +1,4 @@
-group = "com.kaizenque.motion_stabilizer_core"
+group = "com.kaizenque.motion_sickness_stabilizer"
 version = "0.1.0"
 
 buildscript {
@@ -24,7 +24,7 @@ apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 
 android {
-    namespace = "com.kaizenque.motion_stabilizer_core"
+    namespace = "com.kaizenque.motion_sickness_stabilizer"
     compileSdk = 34
 
     compileOptions {

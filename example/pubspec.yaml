@@ -1,4 +1,4 @@
-name: motion_stabilizer_core_example
+name: motion_sickness_stabilizer_example
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -35,7 +35,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
-  motion_stabilizer_core:
+  motion_sickness_stabilizer:
     path: ../
 
 dev_dependencies:

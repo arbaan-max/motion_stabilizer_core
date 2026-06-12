@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:motion_stabilizer_core/motion_stabilizer_core.dart';
-import 'package:motion_stabilizer_core/src/utils/math_utils.dart';
-import 'package:motion_stabilizer_core/src/utils/motion_filter.dart';
+import 'package:motion_sickness_stabilizer/motion_sickness_stabilizer.dart';
+import 'package:motion_sickness_stabilizer/src/utils/math_utils.dart';
+import 'package:motion_sickness_stabilizer/src/utils/motion_filter.dart';
 
 void main() {
   group('MotionFilter', () {

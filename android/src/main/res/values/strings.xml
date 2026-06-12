@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="motion_stabilizer_accessibility_summary">Shows motion-sickness reduction cues over other apps.</string>
-    <string name="motion_stabilizer_accessibility_description">When enabled, Motion Stabilizer floats animated motion cues over whatever app you are using to help reduce motion sickness while travelling.</string>
-    <string name="motion_stabilizer_notification_channel">Motion cues</string>
-    <string name="motion_stabilizer_notification_title">Motion cues active</string>
-    <string name="motion_stabilizer_notification_text">Reducing motion sickness over other apps.</string>
+    <string name="motion_sickness_stabilizer_accessibility_summary">Shows motion-sickness reduction cues over other apps.</string>
+    <string name="motion_sickness_stabilizer_accessibility_description">When enabled, Motion Sickness Stabilizer floats animated motion cues over whatever app you are using to help reduce motion sickness while travelling.</string>
+    <string name="motion_sickness_stabilizer_notification_channel">Motion cues</string>
+    <string name="motion_sickness_stabilizer_notification_title">Motion cues active</string>
+    <string name="motion_sickness_stabilizer_notification_text">Reducing motion sickness over other apps.</string>
 </resources>

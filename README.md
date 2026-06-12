@@ -1,6 +1,6 @@
-# motion_stabilizer_core
+# motion_sickness_stabilizer
 
-[![pub package](https://img.shields.io/pub/v/motion_stabilizer_core.svg)](https://pub.dev/packages/motion_stabilizer_core)
+[![pub package](https://img.shields.io/pub/v/motion_sickness_stabilizer.svg)](https://pub.dev/packages/motion_sickness_stabilizer)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 **Motion-sickness mitigation toolkit for Flutter, focused on Android.**
@@ -15,7 +15,7 @@ inner ear already feels.
 
 > Built because there was **no motion-sickness package on pub.dev**. Free, open
 > source, and made for the community.
-> ⭐ **GitHub:** https://github.com/arbaan-max/motion_stabilizer_core
+> ⭐ **GitHub:** https://github.com/arbaan-max/motion_sickness_stabilizer
 
 It ships **two layers** that share one configuration object:
 
@@ -23,6 +23,15 @@ It ships **two layers** that share one configuration object:
 |-------|--------------|-------|
 | **In-app cues** | Sensor-driven bubbles, horizon and focus dot rendered over *your* UI | Any platform with an accelerometer |
 | **System overlay** | A foreground service floats the same cues over **other apps** | Android (`SYSTEM_ALERT_WINDOW`) |
+
+---
+
+## 🎬 Demo
+
+<!-- TODO: replace with the demo video/GIF. Upload it to the repo (e.g. doc/demo.gif)
+     and use the full raw URL so pub.dev can render it:
+     ![demo](https://raw.githubusercontent.com/arbaan-max/motion_sickness_stabilizer/main/doc/demo.gif) -->
+*Demo video coming soon — see the [example app](example/) to try it on your device.*
 
 ---
 
@@ -54,7 +63,7 @@ It ships **two layers** that share one configuration object:
 
 ```yaml
 dependencies:
-  motion_stabilizer_core: ^0.3.0
+  motion_sickness_stabilizer: ^0.4.0
 ```
 
 ```bash
@@ -62,7 +71,7 @@ flutter pub get
 ```
 
 ```dart
-import 'package:motion_stabilizer_core/motion_stabilizer_core.dart';
+import 'package:motion_sickness_stabilizer/motion_sickness_stabilizer.dart';
 ```
 
 ---
@@ -199,7 +208,7 @@ is **non-touchable**, so taps pass straight through to the app underneath.
 
 ### 3. Optional — Accessibility toggle
 
-Enabling **"Motion Stabilizer Cues"** in *Settings → Accessibility* turns the
+Enabling **"Motion Sickness Stabilizer Cues"** in *Settings → Accessibility* turns the
 overlay on automatically and keeps it available across every app, even when your
 Flutter app is closed. (The draw-over-apps permission is still required.)
 
@@ -343,8 +352,8 @@ A full demo with live toggles, dropdowns and sliders for **every** option is in
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/arbaan-max/motion_stabilizer_core.git
-cd motion_stabilizer_core
+git clone https://github.com/arbaan-max/motion_sickness_stabilizer.git
+cd motion_sickness_stabilizer
 ```
 
 **2. Go into the example app**
@@ -425,7 +434,7 @@ code runs everywhere.
 Issues, ideas and PRs are very welcome — this is built for the community. See
 [CONTRIBUTING.md](CONTRIBUTING.md) for how to get started. If it saves you a
 headache on the road, a ⭐ on
-[GitHub](https://github.com/arbaan-max/motion_stabilizer_core) means a lot.
+[GitHub](https://github.com/arbaan-max/motion_sickness_stabilizer) means a lot.
 
 ---
 

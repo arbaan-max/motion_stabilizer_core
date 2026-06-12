@@ -1,4 +1,4 @@
-package com.kaizenque.motion_stabilizer_core
+package com.kaizenque.motion_sickness_stabilizer
 
 import android.annotation.SuppressLint
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.kaizenque.motion_stabilizer_core
+package com.kaizenque.motion_sickness_stabilizer
 
 /**
  * Native mirror of the Dart `MotionCueConfig`. Values arrive across the method

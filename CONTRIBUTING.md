@@ -1,4 +1,4 @@
-# Contributing to motion_stabilizer_core
+# Contributing to motion_sickness_stabilizer
 
 Thanks for helping make screens easier on the stomach! Issues, ideas and pull
 requests are all welcome.
@@ -6,7 +6,7 @@ requests are all welcome.
 ## Reporting bugs & requesting features
 
 Open an issue at
-https://github.com/arbaan-max/motion_stabilizer_core/issues with:
+https://github.com/arbaan-max/motion_sickness_stabilizer/issues with:
 
 - What you expected and what actually happened
 - Your Flutter version (`flutter --version`), device and Android version
@@ -38,7 +38,7 @@ request:
 
 ## Notes
 
-- Versioning and publishing to [pub.dev](https://pub.dev/packages/motion_stabilizer_core)
+- Versioning and publishing to [pub.dev](https://pub.dev/packages/motion_sickness_stabilizer)
   is handled by the maintainer — don't bump `version:` in `pubspec.yaml`.
 - The native Android overlay (Kotlin) mirrors the Dart maths in
   `MotionController`/`MotionFilter`. If you change one side, change the other to

@@ -16,7 +16,7 @@ class BackgroundOverlayService {
     : _channel = channel ?? _defaultChannel;
 
   static const MethodChannel _defaultChannel = MethodChannel(
-    'motion_stabilizer_core/overlay',
+    'motion_sickness_stabilizer/overlay',
   );
 
   final MethodChannel _channel;

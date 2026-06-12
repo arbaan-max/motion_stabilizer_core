@@ -188,7 +188,7 @@
       "languageVersion": "3.5"
     },
     {
-      "name": "motion_stabilizer_core",
+      "name": "motion_sickness_stabilizer",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.11"

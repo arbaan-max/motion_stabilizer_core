@@ -1,4 +1,4 @@
-# motion_stabilizer_core_example
+# motion_sickness_stabilizer_example
 
 A new Flutter project.
 

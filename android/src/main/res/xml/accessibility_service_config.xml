@@ -3,7 +3,7 @@
     android:accessibilityEventTypes="typeWindowStateChanged"
     android:accessibilityFeedbackType="feedbackGeneric"
     android:canRetrieveWindowContent="false"
-    android:description="@string/motion_stabilizer_accessibility_description"
+    android:description="@string/motion_sickness_stabilizer_accessibility_description"
     android:notificationTimeout="100"
     android:settingsActivity=""
-    android:summary="@string/motion_stabilizer_accessibility_summary" />
+    android:summary="@string/motion_sickness_stabilizer_accessibility_summary" />

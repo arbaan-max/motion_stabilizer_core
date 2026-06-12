@@ -1,4 +1,4 @@
-package com.kaizenque.motion_stabilizer_core
+package com.kaizenque.motion_sickness_stabilizer
 
 import android.content.Context
 import android.content.Intent
@@ -16,7 +16,7 @@ import io.flutter.plugin.common.MethodChannel.Result
  * Method-channel entry point. Bridges the Dart [BackgroundOverlayService] to the
  * native [MotionOverlayService] foreground overlay.
  */
-class MotionStabilizerCorePlugin : FlutterPlugin, MethodCallHandler {
+class MotionSicknessStabilizerPlugin : FlutterPlugin, MethodCallHandler {
 
     private lateinit var channel: MethodChannel
     private lateinit var appContext: Context
@@ -84,6 +84,6 @@ class MotionStabilizerCorePlugin : FlutterPlugin, MethodCallHandler {
     }
 
     companion object {
-        private const val CHANNEL = "motion_stabilizer_core/overlay"
+        private const val CHANNEL = "motion_sickness_stabilizer/overlay"
     }
 }

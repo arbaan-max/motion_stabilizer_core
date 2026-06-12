@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:motion_stabilizer_core/motion_stabilizer_core.dart';
+import 'package:motion_sickness_stabilizer/motion_sickness_stabilizer.dart';
 
 void main() => runApp(const DemoApp());
 
@@ -9,7 +9,7 @@ class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Motion Stabilizer Demo',
+      title: 'Motion Sickness Stabilizer Demo',
       theme: ThemeData.dark(useMaterial3: true),
       home: const HomePage(),
     );
@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
       enabled: _enabled,
       config: _config,
       child: Scaffold(
-        appBar: AppBar(title: const Text('Motion Stabilizer')),
+        appBar: AppBar(title: const Text('Motion Sickness Stabilizer')),
         body: ListView(
           padding: const EdgeInsets.all(16),
           children: [
@@ -126,48 +126,72 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             ),
             const Divider(height: 32),
             const _Title('Bubbles'),
-            _dropdown<CuePlacement>(
-              'Placement',
-              c.placement,
-              const {
-                CuePlacement.edges: 'Edges',
-                CuePlacement.sides: 'Sides',
-                CuePlacement.fullScreen: 'Full screen',
-                CuePlacement.center: 'Center',
-              },
-              (v) => _update(c.copyWith(placement: v)),
+            _dropdown<CuePlacement>('Placement', c.placement, const {
+              CuePlacement.edges: 'Edges',
+              CuePlacement.sides: 'Sides',
+              CuePlacement.fullScreen: 'Full screen',
+              CuePlacement.center: 'Center',
+            }, (v) => _update(c.copyWith(placement: v))),
+            _dropdown<DotShape>('Shape', c.dotShape, const {
+              DotShape.circle: 'Circle',
+              DotShape.ring: 'Ring',
+              DotShape.square: 'Square',
+              DotShape.diamond: 'Diamond',
+            }, (v) => _update(c.copyWith(dotShape: v))),
+            _slider(
+              'Ball size',
+              c.dotRadius,
+              2,
+              14,
+              (v) => _update(c.copyWith(dotRadius: v)),
             ),
-            _dropdown<DotShape>(
-              'Shape',
-              c.dotShape,
-              const {
-                DotShape.circle: 'Circle',
-                DotShape.ring: 'Ring',
-                DotShape.square: 'Square',
-                DotShape.diamond: 'Diamond',
-              },
-              (v) => _update(c.copyWith(dotShape: v)),
+            _slider(
+              'Spacing',
+              c.dotSpacing,
+              28,
+              100,
+              (v) => _update(c.copyWith(dotSpacing: v)),
             ),
-            _slider('Ball size', c.dotRadius, 2, 14,
-                (v) => _update(c.copyWith(dotRadius: v))),
-            _slider('Spacing', c.dotSpacing, 28, 100,
-                (v) => _update(c.copyWith(dotSpacing: v))),
-            _slider('Size variation', c.dotSizeJitter, 0, 1,
-                (v) => _update(c.copyWith(dotSizeJitter: v))),
-            _slider('Sensitivity (gain)', c.gain, 4, 30,
-                (v) => _update(c.copyWith(gain: v))),
-            _slider('Max travel', c.maxTravel, 8, 60,
-                (v) => _update(c.copyWith(maxTravel: v))),
-            _slider('Rest opacity', c.dotBaseOpacity, 0, 1,
-                (v) => _update(c.copyWith(dotBaseOpacity: v))),
-            _slider('Active opacity', c.dotMaxOpacity, 0, 1,
-                (v) => _update(c.copyWith(dotMaxOpacity: v))),
+            _slider(
+              'Size variation',
+              c.dotSizeJitter,
+              0,
+              1,
+              (v) => _update(c.copyWith(dotSizeJitter: v)),
+            ),
+            _slider(
+              'Sensitivity (gain)',
+              c.gain,
+              4,
+              30,
+              (v) => _update(c.copyWith(gain: v)),
+            ),
+            _slider(
+              'Max travel',
+              c.maxTravel,
+              8,
+              60,
+              (v) => _update(c.copyWith(maxTravel: v)),
+            ),
+            _slider(
+              'Rest opacity',
+              c.dotBaseOpacity,
+              0,
+              1,
+              (v) => _update(c.copyWith(dotBaseOpacity: v)),
+            ),
+            _slider(
+              'Active opacity',
+              c.dotMaxOpacity,
+              0,
+              1,
+              (v) => _update(c.copyWith(dotMaxOpacity: v)),
+            ),
             SwitchListTile(
               title: const Text('Brighten on motion'),
               subtitle: const Text('Opacity rises as the device moves'),
               value: c.dotReactToMotionOpacity,
-              onChanged: (v) =>
-                  _update(c.copyWith(dotReactToMotionOpacity: v)),
+              onChanged: (v) => _update(c.copyWith(dotReactToMotionOpacity: v)),
             ),
             SwitchListTile(
               title: const Text('Glow'),
@@ -176,30 +200,50 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
             ),
             const Divider(height: 32),
             const _Title('Horizon / divider'),
-            _dropdown<DividerStyle>(
-              'Style',
-              c.dividerStyle,
-              const {
-                DividerStyle.none: 'None',
-                DividerStyle.line: 'Line',
-                DividerStyle.wavy: 'Wavy (water)',
-                DividerStyle.dashed: 'Dashed',
-                DividerStyle.dualRail: 'Dual rail',
-                DividerStyle.filledHorizon: 'Filled horizon',
-                DividerStyle.gradientBand: 'Gradient band',
-              },
-              (v) => _update(c.copyWith(dividerStyle: v)),
+            _dropdown<DividerStyle>('Style', c.dividerStyle, const {
+              DividerStyle.none: 'None',
+              DividerStyle.line: 'Line',
+              DividerStyle.wavy: 'Wavy (water)',
+              DividerStyle.dashed: 'Dashed',
+              DividerStyle.dualRail: 'Dual rail',
+              DividerStyle.filledHorizon: 'Filled horizon',
+              DividerStyle.gradientBand: 'Gradient band',
+            }, (v) => _update(c.copyWith(dividerStyle: v))),
+            _slider(
+              'Thickness',
+              c.dividerThickness,
+              1,
+              8,
+              (v) => _update(c.copyWith(dividerThickness: v)),
             ),
-            _slider('Thickness', c.dividerThickness, 1, 8,
-                (v) => _update(c.copyWith(dividerThickness: v))),
-            _slider('Opacity', c.dividerOpacity, 0, 1,
-                (v) => _update(c.copyWith(dividerOpacity: v))),
-            _slider('Wave height', c.waveAmplitude, 0, 30,
-                (v) => _update(c.copyWith(waveAmplitude: v))),
-            _slider('Wave length', c.waveWavelength, 40, 320,
-                (v) => _update(c.copyWith(waveWavelength: v))),
-            _slider('Flow speed', c.waveSpeed, 0, 1.5,
-                (v) => _update(c.copyWith(waveSpeed: v))),
+            _slider(
+              'Opacity',
+              c.dividerOpacity,
+              0,
+              1,
+              (v) => _update(c.copyWith(dividerOpacity: v)),
+            ),
+            _slider(
+              'Wave height',
+              c.waveAmplitude,
+              0,
+              30,
+              (v) => _update(c.copyWith(waveAmplitude: v)),
+            ),
+            _slider(
+              'Wave length',
+              c.waveWavelength,
+              40,
+              320,
+              (v) => _update(c.copyWith(waveWavelength: v)),
+            ),
+            _slider(
+              'Flow speed',
+              c.waveSpeed,
+              0,
+              1.5,
+              (v) => _update(c.copyWith(waveSpeed: v)),
+            ),
             SwitchListTile(
               title: const Text('Animate flow'),
               subtitle: const Text('Off = static shape'),
@@ -237,8 +281,9 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
                   color: _hasOverlayPermission ? Colors.green : Colors.orange,
                 ),
                 title: const Text('Draw over other apps'),
-                subtitle:
-                    Text(_hasOverlayPermission ? 'Granted' : 'Not granted'),
+                subtitle: Text(
+                  _hasOverlayPermission ? 'Granted' : 'Not granted',
+                ),
                 trailing: _hasOverlayPermission
                     ? null
                     : TextButton(
@@ -263,10 +308,12 @@ class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
   Widget _preset(String label, MotionCueConfig preset) {
     return ActionChip(
       label: Text(label),
-      onPressed: () => _update(preset.copyWith(
-        dotColor: const Color(0xFF80D8FF),
-        dividerColor: const Color(0xFFB3E5FC),
-      )),
+      onPressed: () => _update(
+        preset.copyWith(
+          dotColor: const Color(0xFF80D8FF),
+          dividerColor: const Color(0xFFB3E5FC),
+        ),
+      ),
     );
   }
 

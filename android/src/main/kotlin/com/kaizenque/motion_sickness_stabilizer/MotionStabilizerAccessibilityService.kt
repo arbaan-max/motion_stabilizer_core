@@ -1,10 +1,10 @@
-package com.kaizenque.motion_stabilizer_core
+package com.kaizenque.motion_sickness_stabilizer
 
 import android.accessibilityservice.AccessibilityService
 import android.view.accessibility.AccessibilityEvent
 
 /**
- * Optional convenience: when the user enables "Motion Stabilizer Cues" in the
+ * Optional convenience: when the user enables "Motion Sickness Stabilizer Cues" in the
  * system Accessibility settings, the overlay turns on automatically and stays
  * available across every app — no need to keep the host Flutter app open.
  *

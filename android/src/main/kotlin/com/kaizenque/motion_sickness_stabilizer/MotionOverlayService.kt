@@ -1,4 +1,4 @@
-package com.kaizenque.motion_stabilizer_core
+package com.kaizenque.motion_sickness_stabilizer
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -72,12 +72,12 @@ class MotionOverlayService : Service(), SensorEventListener {
     }
 
     private fun startInForeground() {
-        val channelId = "motion_stabilizer_cues"
+        val channelId = "motion_sickness_stabilizer_cues"
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val manager = getSystemService(NotificationManager::class.java)
             val channel = NotificationChannel(
                 channelId,
-                getString(R.string.motion_stabilizer_notification_channel),
+                getString(R.string.motion_sickness_stabilizer_notification_channel),
                 NotificationManager.IMPORTANCE_LOW
             )
             manager.createNotificationChannel(channel)
@@ -90,8 +90,8 @@ class MotionOverlayService : Service(), SensorEventListener {
             Notification.Builder(this)
         }
         val notification = builder
-            .setContentTitle(getString(R.string.motion_stabilizer_notification_title))
-            .setContentText(getString(R.string.motion_stabilizer_notification_text))
+            .setContentTitle(getString(R.string.motion_sickness_stabilizer_notification_title))
+            .setContentText(getString(R.string.motion_sickness_stabilizer_notification_text))
             .setSmallIcon(android.R.drawable.ic_menu_compass)
             .setOngoing(true)
             .build()

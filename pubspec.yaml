@@ -1,12 +1,13 @@
-name: motion_stabilizer_core
+name: motion_sickness_stabilizer
 description: >-
-  Motion-sickness mitigation toolkit for Flutter. Sensor-driven "vehicle motion
-  cues" (animated dots), an artificial horizon and a fixation dot, plus an
-  Android system overlay that floats the cues over any app.
-version: 0.3.0
-homepage: https://github.com/arbaan-max/motion_stabilizer_core
-repository: https://github.com/arbaan-max/motion_stabilizer_core
-issue_tracker: https://github.com/arbaan-max/motion_stabilizer_core/issues
+  Reduce motion sickness while using a phone in a moving vehicle — sensor-driven
+  vehicle motion cues (animated dots), an artificial horizon and a focus dot,
+  plus an Android system overlay that floats the cues over any app.
+version: 0.4.0
+homepage: https://github.com/arbaan-max/motion_sickness_stabilizer
+repository: https://github.com/arbaan-max/motion_sickness_stabilizer
+issue_tracker: https://github.com/arbaan-max/motion_sickness_stabilizer/issues
+topics: [motion-sickness, sensors, overlay, accessibility, motion]
 
 environment:
   sdk: ^3.11.5
@@ -27,5 +28,5 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.kaizenque.motion_stabilizer_core
-        pluginClass: MotionStabilizerCorePlugin
+        package: com.kaizenque.motion_sickness_stabilizer
+        pluginClass: MotionSicknessStabilizerPlugin

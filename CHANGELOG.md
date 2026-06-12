@@ -1,3 +1,23 @@
+## 0.4.0
+
+Package renamed.
+
+* **Renamed** from `motion_stabilizer_core` to **`motion_sickness_stabilizer`**
+  so the package is easier to find. No API changes — update your dependency and
+  import:
+
+  ```yaml
+  dependencies:
+    motion_sickness_stabilizer: ^0.4.0
+  ```
+
+  ```dart
+  import 'package:motion_sickness_stabilizer/motion_sickness_stabilizer.dart';
+  ```
+
+* The old `motion_stabilizer_core` package is discontinued and will receive no
+  further updates.
+
 ## 0.3.0
 
 More customization + fixes.
