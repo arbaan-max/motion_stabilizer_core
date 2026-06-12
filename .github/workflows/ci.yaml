@@ -1,17 +1,22 @@
-name: CI
+name: CI & Publish
 
 on:
   push:
     branches: [main]
+    tags:
+      - 'v*'
+
   pull_request:
     branches: [main]
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   analyze-and-test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v5
 
@@ -31,3 +36,23 @@ jobs:
 
       - name: Run tests
         run: flutter test
+
+  publish:
+    needs: analyze-and-test
+
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Publish to pub.dev
+        run: dart pub publish --force

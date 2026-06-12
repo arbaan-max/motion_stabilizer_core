@@ -1,4 +1,4 @@
-## 0.4.0
+## 0.4.1
 
 Package renamed.
 
@@ -8,7 +8,7 @@ Package renamed.
 
   ```yaml
   dependencies:
-    motion_sickness_stabilizer: ^0.4.0
+    motion_sickness_stabilizer: ^0.4.1
   ```
 
   ```dart

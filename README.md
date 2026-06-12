@@ -63,7 +63,7 @@ It ships **two layers** that share one configuration object:
 
 ```yaml
 dependencies:
-  motion_sickness_stabilizer: ^0.4.0
+  motion_sickness_stabilizer: ^0.4.1
 ```
 
 ```bash

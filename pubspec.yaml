@@ -3,7 +3,7 @@ description: >-
   Reduce motion sickness while using a phone in a moving vehicle — sensor-driven
   vehicle motion cues (animated dots), an artificial horizon and a focus dot,
   plus an Android system overlay that floats the cues over any app.
-version: 0.4.0
+version: 0.4.1
 homepage: https://github.com/arbaan-max/motion_sickness_stabilizer
 repository: https://github.com/arbaan-max/motion_sickness_stabilizer
 issue_tracker: https://github.com/arbaan-max/motion_sickness_stabilizer/issues
